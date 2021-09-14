@@ -1,0 +1,6 @@
+
+### GET All Approval
+GET http://localhost/api/approval/
+
+### Approve Approval by Token
+GET http://localhost/api/approval/verify/<TOKEN>
