@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApprovalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/a', function (Request $request) {
-    return response()->json(["message" => "Laravel v8"]);
-});
+Route::get('/approval/add', [ApprovalController::class, "create"]);
+
+
+Route::get('/approval', [ApprovalController::class, "index"]);
+
+Route::get('/approval/verify/{token}', [ApprovalController::class, "verify"]);

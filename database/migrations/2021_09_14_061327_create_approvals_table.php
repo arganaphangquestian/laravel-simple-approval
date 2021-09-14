@@ -15,6 +15,7 @@ class CreateApprovalsTable extends Migration
     {
         Schema::create('approvals', function (Blueprint $table) {
             $table->id();
+            $table->boolean("approved")->default(false);
             $table->timestamps();
         });
     }
